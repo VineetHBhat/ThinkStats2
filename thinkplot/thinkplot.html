@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Python: module thinkplot</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table summary="heading" width="100%" cellspacing="0" cellpadding="2" border="0">
+<tbody><tr bgcolor="#7799ee">
+<td valign="bottom">&nbsp;<br>
+<font face="helvetica, arial" color="#ffffff">&nbsp;<br><big><big><strong>thinkplot</strong></big></big></font></td><td valign="bottom" align="right"><font face="helvetica, arial" color="#ffffff"><a href="http://greenteapress.com/thinkstats2/">index</a><br><a href="file:///home/downey/thinkstats/trunk/ThinkStats2/code/thinkplot.py">/home/downey/thinkstats/trunk/ThinkStats2/code/thinkplot.py</a></font></td></tr></tbody></table>
+    <p><tt>This&nbsp;file&nbsp;contains&nbsp;code&nbsp;for&nbsp;use&nbsp;with&nbsp;"Think&nbsp;Stats",<br>
+by&nbsp;Allen&nbsp;B.&nbsp;Downey,&nbsp;available&nbsp;from&nbsp;greenteapress.com<br>
+&nbsp;<br>
+Copyright&nbsp;2014&nbsp;Allen&nbsp;B.&nbsp;Downey<br>
+License:&nbsp;GNU&nbsp;GPLv3&nbsp;<a href="http://www.gnu.org/licenses/gpl.html">http://www.gnu.org/licenses/gpl.html</a></tt></p>
+<p>
+<table summary="section" width="100%" cellspacing="0" cellpadding="2" border="0">
+<tbody><tr bgcolor="#aa55cc">
+<td colspan="3" valign="bottom">&nbsp;<br>
+<font face="helvetica, arial" color="#ffffff"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table summary="list" width="100%"><tbody><tr><td width="25%" valign="top"><a href="http://greenteapress.com/thinkstats2/math.html">math</a><br>
+<a href="http://greenteapress.com/thinkstats2/matplotlib.html">matplotlib</a><br>
+</td><td width="25%" valign="top"><a href="http://greenteapress.com/thinkstats2/numpy.html">numpy</a><br>
+<a href="http://greenteapress.com/thinkstats2/pandas.html">pandas</a><br>
+</td><td width="25%" valign="top"><a href="http://greenteapress.com/thinkstats2/matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+<a href="http://greenteapress.com/thinkstats2/warnings.html">warnings</a><br>
+</td><td width="25%" valign="top"></td></tr></tbody></table></td></tr></tbody></table></p><p>
+<table summary="section" width="100%" cellspacing="0" cellpadding="2" border="0">
+<tbody><tr bgcolor="#eeaa77">
+<td colspan="3" valign="bottom">&nbsp;<br>
+<font face="helvetica, arial" color="#ffffff"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-Bar"><strong>Bar</strong></a>(xs, ys, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;line.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;xs:&nbsp;sequence&nbsp;of&nbsp;x&nbsp;values<br>
+&nbsp;&nbsp;ys:&nbsp;sequence&nbsp;of&nbsp;y&nbsp;values<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.bar</tt></dd></dl>
+ <dl><dt><a name="-Cdf"><strong>Cdf</strong></a>(cdf, complement<font color="#909090">=False</font>, transform<font color="#909090">=None</font>, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;CDF&nbsp;as&nbsp;a&nbsp;line.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;cdf:&nbsp;Cdf&nbsp;object<br>
+&nbsp;&nbsp;complement:&nbsp;boolean,&nbsp;whether&nbsp;to&nbsp;plot&nbsp;the&nbsp;complementary&nbsp;CDF<br>
+&nbsp;&nbsp;transform:&nbsp;string,&nbsp;one&nbsp;of&nbsp;'exponential',&nbsp;'pareto',&nbsp;'weibull',&nbsp;'gumbel'<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.plot<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;dictionary&nbsp;with&nbsp;the&nbsp;scale&nbsp;options&nbsp;that&nbsp;should&nbsp;be&nbsp;passed&nbsp;to<br>
+&nbsp;&nbsp;Config,&nbsp;Show&nbsp;or&nbsp;Save.</tt></dd></dl>
+ <dl><dt><a name="-Cdfs"><strong>Cdfs</strong></a>(cdfs, complement<font color="#909090">=False</font>, transform<font color="#909090">=None</font>, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;sequence&nbsp;of&nbsp;CDFs.<br>
+&nbsp;<br>
+cdfs:&nbsp;sequence&nbsp;of&nbsp;CDF&nbsp;objects<br>
+complement:&nbsp;boolean,&nbsp;whether&nbsp;to&nbsp;plot&nbsp;the&nbsp;complementary&nbsp;CDF<br>
+transform:&nbsp;string,&nbsp;one&nbsp;of&nbsp;'exponential',&nbsp;'pareto',&nbsp;'weibull',&nbsp;'gumbel'<br>
+options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.plot</tt></dd></dl>
+ <dl><dt><a name="-Clf"><strong>Clf</strong></a>()</dt><dd><tt>Clears&nbsp;the&nbsp;figure&nbsp;and&nbsp;any&nbsp;hints&nbsp;that&nbsp;have&nbsp;been&nbsp;set.</tt></dd></dl>
+ <dl><dt><a name="-Config"><strong>Config</strong></a>(**options)</dt><dd><tt>Configures&nbsp;the&nbsp;plot.<br>
+&nbsp;<br>
+Pulls&nbsp;options&nbsp;out&nbsp;of&nbsp;the&nbsp;option&nbsp;dictionary&nbsp;and&nbsp;passes&nbsp;them&nbsp;to<br>
+the&nbsp;corresponding&nbsp;pyplot&nbsp;functions.</tt></dd></dl>
+ <dl><dt><a name="-Contour"><strong>Contour</strong></a>(obj, pcolor<font color="#909090">=False</font>, contour<font color="#909090">=True</font>, imshow<font color="#909090">=False</font>, **options)</dt><dd><tt>Makes&nbsp;a&nbsp;contour&nbsp;plot.<br>
+&nbsp;<br>
+d:&nbsp;map&nbsp;from&nbsp;(x,&nbsp;y)&nbsp;to&nbsp;z,&nbsp;or&nbsp;object&nbsp;that&nbsp;provides&nbsp;GetDict<br>
+pcolor:&nbsp;boolean,&nbsp;whether&nbsp;to&nbsp;make&nbsp;a&nbsp;pseudocolor&nbsp;plot<br>
+contour:&nbsp;boolean,&nbsp;whether&nbsp;to&nbsp;make&nbsp;a&nbsp;contour&nbsp;plot<br>
+imshow:&nbsp;boolean,&nbsp;whether&nbsp;to&nbsp;use&nbsp;pyplot.imshow<br>
+options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.pcolor&nbsp;and/or&nbsp;pyplot.contour</tt></dd></dl>
+ <dl><dt><a name="-Diff"><strong>Diff</strong></a>(t)</dt><dd><tt>Compute&nbsp;the&nbsp;differences&nbsp;between&nbsp;adjacent&nbsp;elements&nbsp;in&nbsp;a&nbsp;sequence.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t:&nbsp;sequence&nbsp;of&nbsp;number<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sequence&nbsp;of&nbsp;differences&nbsp;(length&nbsp;one&nbsp;less&nbsp;than&nbsp;t)</tt></dd></dl>
+ <dl><dt><a name="-Figure"><strong>Figure</strong></a>(**options)</dt><dd><tt>Sets&nbsp;options&nbsp;for&nbsp;the&nbsp;current&nbsp;figure.</tt></dd></dl>
+ <dl><dt><a name="-FillBetween"><strong>FillBetween</strong></a>(xs, y1, y2<font color="#909090">=None</font>, where<font color="#909090">=None</font>, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;line.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;xs:&nbsp;sequence&nbsp;of&nbsp;x&nbsp;values<br>
+&nbsp;&nbsp;y1:&nbsp;sequence&nbsp;of&nbsp;y&nbsp;values<br>
+&nbsp;&nbsp;y2:&nbsp;sequence&nbsp;of&nbsp;y&nbsp;values<br>
+&nbsp;&nbsp;where:&nbsp;sequence&nbsp;of&nbsp;boolean<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.fill_between</tt></dd></dl>
+ <dl><dt><a name="-HexBin"><strong>HexBin</strong></a>(xs, ys, **options)</dt><dd><tt>Makes&nbsp;a&nbsp;scatter&nbsp;plot.<br>
+&nbsp;<br>
+xs:&nbsp;x&nbsp;values<br>
+ys:&nbsp;y&nbsp;values<br>
+options:&nbsp;options&nbsp;passed&nbsp;to&nbsp;pyplot.scatter</tt></dd></dl>
+ <dl><dt><a name="-Hist"><strong>Hist</strong></a>(hist, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;Pmf&nbsp;or&nbsp;Hist&nbsp;with&nbsp;a&nbsp;bar&nbsp;plot.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;width&nbsp;of&nbsp;the&nbsp;bars&nbsp;is&nbsp;based&nbsp;on&nbsp;the&nbsp;minimum&nbsp;difference<br>
+between&nbsp;values&nbsp;in&nbsp;the&nbsp;Hist.&nbsp;&nbsp;If&nbsp;that's&nbsp;too&nbsp;small,&nbsp;you&nbsp;can&nbsp;override<br>
+it&nbsp;by&nbsp;providing&nbsp;a&nbsp;width&nbsp;keyword&nbsp;argument,&nbsp;in&nbsp;the&nbsp;same&nbsp;units<br>
+as&nbsp;the&nbsp;values.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;hist:&nbsp;Hist&nbsp;or&nbsp;Pmf&nbsp;object<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.bar</tt></dd></dl>
+ <dl><dt><a name="-Hists"><strong>Hists</strong></a>(hists, **options)</dt><dd><tt>Plots&nbsp;two&nbsp;histograms&nbsp;as&nbsp;interleaved&nbsp;bar&nbsp;plots.<br>
+&nbsp;<br>
+Options&nbsp;are&nbsp;passed&nbsp;along&nbsp;for&nbsp;all&nbsp;PMFs.&nbsp;&nbsp;If&nbsp;you&nbsp;want&nbsp;different<br>
+options&nbsp;for&nbsp;each&nbsp;pmf,&nbsp;make&nbsp;multiple&nbsp;calls&nbsp;to&nbsp;Pmf.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;hists:&nbsp;list&nbsp;of&nbsp;two&nbsp;Hist&nbsp;or&nbsp;Pmf&nbsp;objects<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.plot</tt></dd></dl>
+ <dl><dt><a name="-Pcolor"><strong>Pcolor</strong></a>(xs, ys, zs, pcolor<font color="#909090">=True</font>, contour<font color="#909090">=False</font>, **options)</dt><dd><tt>Makes&nbsp;a&nbsp;pseudocolor&nbsp;plot.<br>
+&nbsp;<br>
+xs:<br>
+ys:<br>
+zs:<br>
+pcolor:&nbsp;boolean,&nbsp;whether&nbsp;to&nbsp;make&nbsp;a&nbsp;pseudocolor&nbsp;plot<br>
+contour:&nbsp;boolean,&nbsp;whether&nbsp;to&nbsp;make&nbsp;a&nbsp;contour&nbsp;plot<br>
+options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.pcolor&nbsp;and/or&nbsp;pyplot.contour</tt></dd></dl>
+ <dl><dt><a name="-Pdf"><strong>Pdf</strong></a>(pdf, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;Pdf,&nbsp;Pmf,&nbsp;or&nbsp;Hist&nbsp;as&nbsp;a&nbsp;line.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;pdf:&nbsp;Pdf,&nbsp;Pmf,&nbsp;or&nbsp;Hist&nbsp;object<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.plot</tt></dd></dl>
+ <dl><dt><a name="-Pdfs"><strong>Pdfs</strong></a>(pdfs, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;sequence&nbsp;of&nbsp;PDFs.<br>
+&nbsp;<br>
+Options&nbsp;are&nbsp;passed&nbsp;along&nbsp;for&nbsp;all&nbsp;PDFs.&nbsp;&nbsp;If&nbsp;you&nbsp;want&nbsp;different<br>
+options&nbsp;for&nbsp;each&nbsp;pdf,&nbsp;make&nbsp;multiple&nbsp;calls&nbsp;to&nbsp;Pdf.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;pdfs:&nbsp;sequence&nbsp;of&nbsp;PDF&nbsp;objects<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.plot</tt></dd></dl>
+ <dl><dt><a name="-Plot"><strong>Plot</strong></a>(obj, ys<font color="#909090">=None</font>, style<font color="#909090">=''</font>, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;line.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;obj:&nbsp;sequence&nbsp;of&nbsp;x&nbsp;values,&nbsp;or&nbsp;Series,&nbsp;or&nbsp;anything&nbsp;with&nbsp;Render()<br>
+&nbsp;&nbsp;ys:&nbsp;sequence&nbsp;of&nbsp;y&nbsp;values<br>
+&nbsp;&nbsp;style:&nbsp;style&nbsp;string&nbsp;passed&nbsp;along&nbsp;to&nbsp;pyplot.plot<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.plot</tt></dd></dl>
+ <dl><dt><a name="-Plotly"><strong>Plotly</strong></a>(**options)</dt><dd><tt>Shows&nbsp;the&nbsp;plot.<br>
+&nbsp;<br>
+For&nbsp;options,&nbsp;see&nbsp;Config.<br>
+&nbsp;<br>
+options:&nbsp;keyword&nbsp;args&nbsp;used&nbsp;to&nbsp;invoke&nbsp;various&nbsp;pyplot&nbsp;functions</tt></dd></dl>
+ <dl><dt><a name="-Pmf"><strong>Pmf</strong></a>(pmf, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;Pmf&nbsp;or&nbsp;Hist&nbsp;as&nbsp;a&nbsp;line.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;pmf:&nbsp;Hist&nbsp;or&nbsp;Pmf&nbsp;object<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.plot</tt></dd></dl>
+ <dl><dt><a name="-Pmfs"><strong>Pmfs</strong></a>(pmfs, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;sequence&nbsp;of&nbsp;PMFs.<br>
+&nbsp;<br>
+Options&nbsp;are&nbsp;passed&nbsp;along&nbsp;for&nbsp;all&nbsp;PMFs.&nbsp;&nbsp;If&nbsp;you&nbsp;want&nbsp;different<br>
+options&nbsp;for&nbsp;each&nbsp;pmf,&nbsp;make&nbsp;multiple&nbsp;calls&nbsp;to&nbsp;Pmf.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;pmfs:&nbsp;sequence&nbsp;of&nbsp;PMF&nbsp;objects<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.plot</tt></dd></dl>
+ <dl><dt><a name="-PrePlot"><strong>PrePlot</strong></a>(num<font color="#909090">=None</font>, rows<font color="#909090">=None</font>, cols<font color="#909090">=None</font>)</dt><dd><tt>Takes&nbsp;hints&nbsp;about&nbsp;what's&nbsp;coming.<br>
+&nbsp;<br>
+num:&nbsp;number&nbsp;of&nbsp;lines&nbsp;that&nbsp;will&nbsp;be&nbsp;plotted<br>
+rows:&nbsp;number&nbsp;of&nbsp;rows&nbsp;of&nbsp;subplots<br>
+cols:&nbsp;number&nbsp;of&nbsp;columns&nbsp;of&nbsp;subplots</tt></dd></dl>
+ <dl><dt><a name="-Save"><strong>Save</strong></a>(root<font color="#909090">=None</font>, formats<font color="#909090">=None</font>, **options)</dt><dd><tt>Saves&nbsp;the&nbsp;plot&nbsp;in&nbsp;the&nbsp;given&nbsp;formats&nbsp;and&nbsp;clears&nbsp;the&nbsp;figure.<br>
+&nbsp;<br>
+For&nbsp;options,&nbsp;see&nbsp;Config.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;root:&nbsp;string&nbsp;filename&nbsp;root<br>
+&nbsp;&nbsp;formats:&nbsp;list&nbsp;of&nbsp;string&nbsp;formats<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;used&nbsp;to&nbsp;invoke&nbsp;various&nbsp;pyplot&nbsp;functions</tt></dd></dl>
+ <dl><dt><a name="-SaveFormat"><strong>SaveFormat</strong></a>(root, fmt<font color="#909090">='eps'</font>)</dt><dd><tt>Writes&nbsp;the&nbsp;current&nbsp;figure&nbsp;to&nbsp;a&nbsp;file&nbsp;in&nbsp;the&nbsp;given&nbsp;format.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;root:&nbsp;string&nbsp;filename&nbsp;root<br>
+&nbsp;&nbsp;fmt:&nbsp;string&nbsp;format</tt></dd></dl>
+ <dl><dt><a name="-Scatter"><strong>Scatter</strong></a>(xs, ys<font color="#909090">=None</font>, **options)</dt><dd><tt>Makes&nbsp;a&nbsp;scatter&nbsp;plot.<br>
+&nbsp;<br>
+xs:&nbsp;x&nbsp;values<br>
+ys:&nbsp;y&nbsp;values<br>
+options:&nbsp;options&nbsp;passed&nbsp;to&nbsp;pyplot.scatter</tt></dd></dl>
+ <dl><dt><a name="-Show"><strong>Show</strong></a>(**options)</dt><dd><tt>Shows&nbsp;the&nbsp;plot.<br>
+&nbsp;<br>
+For&nbsp;options,&nbsp;see&nbsp;Config.<br>
+&nbsp;<br>
+options:&nbsp;keyword&nbsp;args&nbsp;used&nbsp;to&nbsp;invoke&nbsp;various&nbsp;pyplot&nbsp;functions</tt></dd></dl>
+ <dl><dt><a name="-SubPlot"><strong>SubPlot</strong></a>(plot_number, rows<font color="#909090">=None</font>, cols<font color="#909090">=None</font>)</dt><dd><tt>Configures&nbsp;the&nbsp;number&nbsp;of&nbsp;subplots&nbsp;and&nbsp;changes&nbsp;the&nbsp;current&nbsp;plot.<br>
+&nbsp;<br>
+rows:&nbsp;int<br>
+cols:&nbsp;int<br>
+plot_number:&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-Text"><strong>Text</strong></a>(x, y, s, **options)</dt><dd><tt>Puts&nbsp;text&nbsp;in&nbsp;a&nbsp;figure.<br>
+&nbsp;<br>
+x:&nbsp;number<br>
+y:&nbsp;number<br>
+s:&nbsp;string<br>
+options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.text</tt></dd></dl>
+ <dl><dt><a name="-cdf"><strong>cdf</strong></a> = Cdf(cdf, complement<font color="#909090">=False</font>, transform<font color="#909090">=None</font>, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;CDF&nbsp;as&nbsp;a&nbsp;line.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;cdf:&nbsp;Cdf&nbsp;object<br>
+&nbsp;&nbsp;complement:&nbsp;boolean,&nbsp;whether&nbsp;to&nbsp;plot&nbsp;the&nbsp;complementary&nbsp;CDF<br>
+&nbsp;&nbsp;transform:&nbsp;string,&nbsp;one&nbsp;of&nbsp;'exponential',&nbsp;'pareto',&nbsp;'weibull',&nbsp;'gumbel'<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.plot<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;dictionary&nbsp;with&nbsp;the&nbsp;scale&nbsp;options&nbsp;that&nbsp;should&nbsp;be&nbsp;passed&nbsp;to<br>
+&nbsp;&nbsp;Config,&nbsp;Show&nbsp;or&nbsp;Save.</tt></dd></dl>
+ <dl><dt><a name="-cdfs"><strong>cdfs</strong></a> = Cdfs(cdfs, complement<font color="#909090">=False</font>, transform<font color="#909090">=None</font>, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;sequence&nbsp;of&nbsp;CDFs.<br>
+&nbsp;<br>
+cdfs:&nbsp;sequence&nbsp;of&nbsp;CDF&nbsp;objects<br>
+complement:&nbsp;boolean,&nbsp;whether&nbsp;to&nbsp;plot&nbsp;the&nbsp;complementary&nbsp;CDF<br>
+transform:&nbsp;string,&nbsp;one&nbsp;of&nbsp;'exponential',&nbsp;'pareto',&nbsp;'weibull',&nbsp;'gumbel'<br>
+options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.plot</tt></dd></dl>
+ <dl><dt><a name="-clf"><strong>clf</strong></a> = Clf()</dt><dd><tt>Clears&nbsp;the&nbsp;figure&nbsp;and&nbsp;any&nbsp;hints&nbsp;that&nbsp;have&nbsp;been&nbsp;set.</tt></dd></dl>
+ <dl><dt><a name="-config"><strong>config</strong></a> = Config(**options)</dt><dd><tt>Configures&nbsp;the&nbsp;plot.<br>
+&nbsp;<br>
+Pulls&nbsp;options&nbsp;out&nbsp;of&nbsp;the&nbsp;option&nbsp;dictionary&nbsp;and&nbsp;passes&nbsp;them&nbsp;to<br>
+the&nbsp;corresponding&nbsp;pyplot&nbsp;functions.</tt></dd></dl>
+ <dl><dt><a name="-contour"><strong>contour</strong></a> = Contour(obj, pcolor<font color="#909090">=False</font>, contour<font color="#909090">=True</font>, imshow<font color="#909090">=False</font>, **options)</dt><dd><tt>Makes&nbsp;a&nbsp;contour&nbsp;plot.<br>
+&nbsp;<br>
+d:&nbsp;map&nbsp;from&nbsp;(x,&nbsp;y)&nbsp;to&nbsp;z,&nbsp;or&nbsp;object&nbsp;that&nbsp;provides&nbsp;GetDict<br>
+pcolor:&nbsp;boolean,&nbsp;whether&nbsp;to&nbsp;make&nbsp;a&nbsp;pseudocolor&nbsp;plot<br>
+contour:&nbsp;boolean,&nbsp;whether&nbsp;to&nbsp;make&nbsp;a&nbsp;contour&nbsp;plot<br>
+imshow:&nbsp;boolean,&nbsp;whether&nbsp;to&nbsp;use&nbsp;pyplot.imshow<br>
+options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.pcolor&nbsp;and/or&nbsp;pyplot.contour</tt></dd></dl>
+ <dl><dt><a name="-diff"><strong>diff</strong></a> = Diff(t)</dt><dd><tt>Compute&nbsp;the&nbsp;differences&nbsp;between&nbsp;adjacent&nbsp;elements&nbsp;in&nbsp;a&nbsp;sequence.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t:&nbsp;sequence&nbsp;of&nbsp;number<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sequence&nbsp;of&nbsp;differences&nbsp;(length&nbsp;one&nbsp;less&nbsp;than&nbsp;t)</tt></dd></dl>
+ <dl><dt><a name="-figure"><strong>figure</strong></a> = Figure(**options)</dt><dd><tt>Sets&nbsp;options&nbsp;for&nbsp;the&nbsp;current&nbsp;figure.</tt></dd></dl>
+ <dl><dt><a name="-hist"><strong>hist</strong></a> = Hist(hist, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;Pmf&nbsp;or&nbsp;Hist&nbsp;with&nbsp;a&nbsp;bar&nbsp;plot.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;width&nbsp;of&nbsp;the&nbsp;bars&nbsp;is&nbsp;based&nbsp;on&nbsp;the&nbsp;minimum&nbsp;difference<br>
+between&nbsp;values&nbsp;in&nbsp;the&nbsp;Hist.&nbsp;&nbsp;If&nbsp;that's&nbsp;too&nbsp;small,&nbsp;you&nbsp;can&nbsp;override<br>
+it&nbsp;by&nbsp;providing&nbsp;a&nbsp;width&nbsp;keyword&nbsp;argument,&nbsp;in&nbsp;the&nbsp;same&nbsp;units<br>
+as&nbsp;the&nbsp;values.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;hist:&nbsp;Hist&nbsp;or&nbsp;Pmf&nbsp;object<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.bar</tt></dd></dl>
+ <dl><dt><a name="-hists"><strong>hists</strong></a> = Hists(hists, **options)</dt><dd><tt>Plots&nbsp;two&nbsp;histograms&nbsp;as&nbsp;interleaved&nbsp;bar&nbsp;plots.<br>
+&nbsp;<br>
+Options&nbsp;are&nbsp;passed&nbsp;along&nbsp;for&nbsp;all&nbsp;PMFs.&nbsp;&nbsp;If&nbsp;you&nbsp;want&nbsp;different<br>
+options&nbsp;for&nbsp;each&nbsp;pmf,&nbsp;make&nbsp;multiple&nbsp;calls&nbsp;to&nbsp;Pmf.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;hists:&nbsp;list&nbsp;of&nbsp;two&nbsp;Hist&nbsp;or&nbsp;Pmf&nbsp;objects<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.plot</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt></dl>
+ <dl><dt><a name="-pcolor"><strong>pcolor</strong></a> = Pcolor(xs, ys, zs, pcolor<font color="#909090">=True</font>, contour<font color="#909090">=False</font>, **options)</dt><dd><tt>Makes&nbsp;a&nbsp;pseudocolor&nbsp;plot.<br>
+&nbsp;<br>
+xs:<br>
+ys:<br>
+zs:<br>
+pcolor:&nbsp;boolean,&nbsp;whether&nbsp;to&nbsp;make&nbsp;a&nbsp;pseudocolor&nbsp;plot<br>
+contour:&nbsp;boolean,&nbsp;whether&nbsp;to&nbsp;make&nbsp;a&nbsp;contour&nbsp;plot<br>
+options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.pcolor&nbsp;and/or&nbsp;pyplot.contour</tt></dd></dl>
+ <dl><dt><a name="-plot"><strong>plot</strong></a> = Plot(obj, ys<font color="#909090">=None</font>, style<font color="#909090">=''</font>, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;line.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;obj:&nbsp;sequence&nbsp;of&nbsp;x&nbsp;values,&nbsp;or&nbsp;Series,&nbsp;or&nbsp;anything&nbsp;with&nbsp;Render()<br>
+&nbsp;&nbsp;ys:&nbsp;sequence&nbsp;of&nbsp;y&nbsp;values<br>
+&nbsp;&nbsp;style:&nbsp;style&nbsp;string&nbsp;passed&nbsp;along&nbsp;to&nbsp;pyplot.plot<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.plot</tt></dd></dl>
+ <dl><dt><a name="-pmf"><strong>pmf</strong></a> = Pmf(pmf, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;Pmf&nbsp;or&nbsp;Hist&nbsp;as&nbsp;a&nbsp;line.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;pmf:&nbsp;Hist&nbsp;or&nbsp;Pmf&nbsp;object<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.plot</tt></dd></dl>
+ <dl><dt><a name="-pmfs"><strong>pmfs</strong></a> = Pmfs(pmfs, **options)</dt><dd><tt>Plots&nbsp;a&nbsp;sequence&nbsp;of&nbsp;PMFs.<br>
+&nbsp;<br>
+Options&nbsp;are&nbsp;passed&nbsp;along&nbsp;for&nbsp;all&nbsp;PMFs.&nbsp;&nbsp;If&nbsp;you&nbsp;want&nbsp;different<br>
+options&nbsp;for&nbsp;each&nbsp;pmf,&nbsp;make&nbsp;multiple&nbsp;calls&nbsp;to&nbsp;Pmf.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;pmfs:&nbsp;sequence&nbsp;of&nbsp;PMF&nbsp;objects<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.plot</tt></dd></dl>
+ <dl><dt><a name="-preplot"><strong>preplot</strong></a> = PrePlot(num<font color="#909090">=None</font>, rows<font color="#909090">=None</font>, cols<font color="#909090">=None</font>)</dt><dd><tt>Takes&nbsp;hints&nbsp;about&nbsp;what's&nbsp;coming.<br>
+&nbsp;<br>
+num:&nbsp;number&nbsp;of&nbsp;lines&nbsp;that&nbsp;will&nbsp;be&nbsp;plotted<br>
+rows:&nbsp;number&nbsp;of&nbsp;rows&nbsp;of&nbsp;subplots<br>
+cols:&nbsp;number&nbsp;of&nbsp;columns&nbsp;of&nbsp;subplots</tt></dd></dl>
+ <dl><dt><a name="-save"><strong>save</strong></a> = Save(root<font color="#909090">=None</font>, formats<font color="#909090">=None</font>, **options)</dt><dd><tt>Saves&nbsp;the&nbsp;plot&nbsp;in&nbsp;the&nbsp;given&nbsp;formats&nbsp;and&nbsp;clears&nbsp;the&nbsp;figure.<br>
+&nbsp;<br>
+For&nbsp;options,&nbsp;see&nbsp;Config.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;root:&nbsp;string&nbsp;filename&nbsp;root<br>
+&nbsp;&nbsp;formats:&nbsp;list&nbsp;of&nbsp;string&nbsp;formats<br>
+&nbsp;&nbsp;options:&nbsp;keyword&nbsp;args&nbsp;used&nbsp;to&nbsp;invoke&nbsp;various&nbsp;pyplot&nbsp;functions</tt></dd></dl>
+ <dl><dt><a name="-scatter"><strong>scatter</strong></a> = Scatter(xs, ys<font color="#909090">=None</font>, **options)</dt><dd><tt>Makes&nbsp;a&nbsp;scatter&nbsp;plot.<br>
+&nbsp;<br>
+xs:&nbsp;x&nbsp;values<br>
+ys:&nbsp;y&nbsp;values<br>
+options:&nbsp;options&nbsp;passed&nbsp;to&nbsp;pyplot.scatter</tt></dd></dl>
+ <dl><dt><a name="-show"><strong>show</strong></a> = Show(**options)</dt><dd><tt>Shows&nbsp;the&nbsp;plot.<br>
+&nbsp;<br>
+For&nbsp;options,&nbsp;see&nbsp;Config.<br>
+&nbsp;<br>
+options:&nbsp;keyword&nbsp;args&nbsp;used&nbsp;to&nbsp;invoke&nbsp;various&nbsp;pyplot&nbsp;functions</tt></dd></dl>
+ <dl><dt><a name="-subplot"><strong>subplot</strong></a> = SubPlot(plot_number, rows<font color="#909090">=None</font>, cols<font color="#909090">=None</font>)</dt><dd><tt>Configures&nbsp;the&nbsp;number&nbsp;of&nbsp;subplots&nbsp;and&nbsp;changes&nbsp;the&nbsp;current&nbsp;plot.<br>
+&nbsp;<br>
+rows:&nbsp;int<br>
+cols:&nbsp;int<br>
+plot_number:&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-text"><strong>text</strong></a> = Text(x, y, s, **options)</dt><dd><tt>Puts&nbsp;text&nbsp;in&nbsp;a&nbsp;figure.<br>
+&nbsp;<br>
+x:&nbsp;number<br>
+y:&nbsp;number<br>
+s:&nbsp;string<br>
+options:&nbsp;keyword&nbsp;args&nbsp;passed&nbsp;to&nbsp;pyplot.text</tt></dd></dl>
+</td></tr></tbody></table></p><p>
+<table summary="section" width="100%" cellspacing="0" cellpadding="2" border="0">
+<tbody><tr bgcolor="#55aa55">
+<td colspan="3" valign="bottom">&nbsp;<br>
+<font face="helvetica, arial" color="#ffffff"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>LEGEND</strong> = True<br>
+<strong>LOC</strong> = None<br>
+<strong>print_function</strong> = _Feature((2, 6, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 65536)</td></tr></tbody></table>
+</p></body></html>
